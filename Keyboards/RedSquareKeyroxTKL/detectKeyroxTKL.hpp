@@ -1,5 +1,5 @@
-#ifndef KEYBOARDDETECT_HPP
-#define KEYBOARDDETECT_HPP
+#ifndef DETECTKEYROXTKL_HPP
+#define DETECTKEYROXTKL_HPP
 
 #include <hidapi/hidapi.h>
 
