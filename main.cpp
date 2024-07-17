@@ -11,6 +11,7 @@ int main()
   try
   {
     keyboardDevice = detectKeyroxTKL();
+    std::cout << "KeyroxTKL detected\n";
   }
   catch (const std::exception& e)
   {
