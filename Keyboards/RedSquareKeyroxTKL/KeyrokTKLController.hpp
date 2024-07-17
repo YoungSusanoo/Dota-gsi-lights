@@ -14,14 +14,14 @@ public:
 
   ~KeyrokTKLController();
 
-  void setMode(KeyroxModes mode);
+  void setMode(KeyroxTKLModes mode);
   void setColors(const std::vector< RGBColor >& colors);
   void setBrightness(unsigned int brightness);
 
 private:
   hid_device* device_;
   unsigned int brightness_;
-  KeyroxModes mode_;
+  KeyroxTKLModes mode_;
   const size_t packetDataLength_;
 
   void sendData(const unsigned char data[]);

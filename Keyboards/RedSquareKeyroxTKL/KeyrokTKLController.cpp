@@ -29,7 +29,7 @@ namespace
 KeyrokTKLController::KeyrokTKLController(hid_device* device):
   packetDataLength_(520),
   brightness_(200),
-  mode_(KeyroxModes::CUSTOM_MODE_VALUE),
+  mode_(KeyroxTKLModes::CUSTOM_MODE_VALUE),
   device_(device)
 {
   if (!device_)
@@ -43,7 +43,7 @@ KeyrokTKLController::~KeyrokTKLController()
   hid_close(device_);
 }
 
-void KeyrokTKLController::setMode(KeyroxModes mode)
+void KeyrokTKLController::setMode(KeyroxTKLModes mode)
 {
   unsigned char usb_buf[packetDataLength_];
   memset(usb_buf, 0x00, packetDataLength_);
@@ -64,7 +64,7 @@ void KeyrokTKLController::setColors(const std::vector< RGBColor >& colors)
     throw std::invalid_argument("KeyroxTKLController.cpp: colors.size() != 87");
   }
 
-  setMode(KeyroxModes::CUSTOM_MODE_VALUE);
+  setMode(KeyroxTKLModes::CUSTOM_MODE_VALUE);
 
   unsigned char usb_buf[packetDataLength_];
   memset(usb_buf, 0x00, packetDataLength_);
