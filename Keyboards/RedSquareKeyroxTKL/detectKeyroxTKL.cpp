@@ -2,14 +2,27 @@
 
 #include <stdexcept>
 
+bool isNeeded(hid_device_info* info, size_t usagePage, size_t usage, size_t interface)
+{
+  bool condition = false;
+  if (info)
+  {
+    condition = info->usage_page == usagePage;
+    condition = condition && info->usage == usage;
+    condition = condition && info->interface_number == interface;
+  }
+  return condition;
+}
+
 hid_device* detectKeyroxTKL()
 {
-  size_t redSquareVendorId = 0x1A2C;
-  size_t keyroxTklProductId = 0x1511;
+  size_t vendorId = 0x1A2C;
+  size_t productId = 0x1511;
   size_t usagePage = 0xFF00;
   size_t usage = 2;
-  hid_device_info* infoList = hid_enumerate(redSquareVendorId, keyroxTklProductId);
-  while (infoList->usage_page != usagePage && infoList->usage != usage)
+  size_t interface = 3;
+  hid_device_info* infoList = hid_enumerate(vendorId, productId);
+  while (!isNeeded(infoList, usagePage, usage, interface))
   {
     if (!infoList->next)
     {
