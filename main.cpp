@@ -10,7 +10,7 @@ int main()
   hid_device* keyboardDevice{};
   try
   {
-    keyboardDevice = detectKeyboard();
+    keyboardDevice = detectKeyroxTKL();
   }
   catch (const std::exception& e)
   {

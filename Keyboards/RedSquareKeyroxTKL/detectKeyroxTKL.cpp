@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-hid_device* detectKeyboard()
+hid_device* detectKeyroxTKL()
 {
   size_t redSquareVendorId = 0x1A2C;
   size_t keyroxTklProductId = 0x1511;

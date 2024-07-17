@@ -3,6 +3,6 @@
 
 #include <hidapi/hidapi.h>
 
-hid_device* detectKeyboard();
+hid_device* detectKeyroxTKL();
 
 #endif
