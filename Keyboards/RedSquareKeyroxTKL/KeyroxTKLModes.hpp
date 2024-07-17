@@ -1,7 +1,7 @@
 #ifndef KEYROXTKLMODES_HPP
 #define KEYROXTKLMODES_HPP
 
-enum class KeyroxModes
+enum class KeyroxTKLModes
 {
   WAVE_MODE_VALUE = 0x00,
   CONST_MODE_VALUE = 0x01,
